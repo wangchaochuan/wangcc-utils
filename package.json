@@ -1,16 +1,17 @@
 {
   "name": "wangcc-utils",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "wangchaochuan's util function library",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types/utils/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "dev": "rollup -w -c",
-    "build": "rollup -c",
+    "build:types": "tsc -b ./tsconfig.json",
+    "build": "npm run build:types && rollup -c",
     "prepublish": "pnpm version && pnpm build"
   },
   "repository": {
